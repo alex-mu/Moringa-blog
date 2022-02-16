@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
+file_path = os.path.abspath(os.getcwd())+"\moringablog.db"
 app = Flask(__name__)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////dbdir/moringablog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
 db = SQLAlchemy(app)
 
 class Blogpost(db.Model):
@@ -18,7 +20,7 @@ class Blogpost(db.Model):
 
 @app.route('/')
 def index():
-    posts = Blogpost.query.order_by(Blogpost.date_posted.desc()).all()
+    posts = Blogpost.query.all()
 
     return render_template('index.html', posts=posts)
 

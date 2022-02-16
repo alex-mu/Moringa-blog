@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="style.css">
 
     <title>Moringa Blog Feature</title>
 
@@ -27,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Start Bootstrap</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">Moringa blog</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -76,7 +77,7 @@
                 {{ post.subtitle }}
               </h3>
             </a>
-            <p class="post-meta">Posted by {{ post.author }} on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
+            <p class="post-meta">Posted by {{ post.author }} on </p>
           </div>
           {% endfor %}
           <hr>
